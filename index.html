@@ -6,6 +6,7 @@
     <title>Manish Varma - Software Engineering Manager</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232563eb;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2310b981;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-family='Arial, sans-serif' font-size='48' font-weight='bold' fill='white' text-anchor='middle'%3EMV%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -109,6 +110,12 @@
                     </p>
                     
                     <div class="stable-request-links">
+                        <a href="https://emmvish.github.io/stable-request" target="_blank" class="link-button">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            </svg>
+                            Get Started
+                        </a>
                         <a href="https://www.npmjs.com/package/@emmvish/stable-request" target="_blank" class="link-button">
                             <svg fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331zM10.665 10H12v2.667h-1.335V10z"/>
@@ -440,72 +447,5 @@
             <p>&copy; 2026 Manish Varma. All rights reserved.</p>
         </footer>
     </div>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            const mailtoLink = `mailto:mvsn98@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
-            window.location.href = mailtoLink;
-            
-            this.reset();
-            
-            alert('Thank you for your feedback! Your email client should open now.');
-        });
-
-        const sections = document.querySelectorAll('section');
-        
-        if ('IntersectionObserver' in window) {
-            const observerOptions = {
-                threshold: 0.05,
-                rootMargin: '0px 0px -20px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(section);
-            });
-
-            setTimeout(() => {
-                sections.forEach(section => {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                });
-            }, 2000);
-        } else {
-            sections.forEach(section => {
-                section.style.opacity = '1';
-                section.style.transform = 'translateY(0)';
-            });
-        }
-    </script>
 </body>
 </html>
