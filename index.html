@@ -104,9 +104,12 @@
                         <li><strong>Phased workflows</strong> via stableWorkflow for array-based multi-phase execution with dynamic control flow</li>
                         <li><strong>Graph-based workflows</strong> via stableWorkflowGraph for DAG execution with higher parallelism</li>
                         <li><strong>Generic function execution</strong> via stableFunction, inheriting all resilience guards</li>
+                        <li><strong>Scheduled execution</strong> via stableScheduler for cron/interval/timestamp jobs</li>
+                        <li><strong>Transactional shared state</strong> via stableBuffer for safe, serialized mutations</li>
+                        <li><strong>Config-driven runs</strong> via stableRunner for repeatable local or containerized execution</li>
                     </ul>
                     <p class="overview-text">
-                        All five execution modes support the same resilience stack: retries, jitter, circuit breaking, caching, rate/concurrency limits, config cascading, shared buffers, trial mode, comprehensive hooks, and metrics. This uniformity makes it trivial to compose requests and functions in any topology.
+                        All execution modes support the same resilience stack: retries, jitter, circuit breaking, caching, rate/concurrency limits, config cascading, shared buffers, trial mode, comprehensive hooks, and metrics. This uniformity makes it trivial to compose requests and functions in any topology.
                     </p>
                     
                     <div class="stable-request-links">
