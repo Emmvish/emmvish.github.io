@@ -189,14 +189,23 @@ h3 {
     margin-top: 0.25rem;
 }
 
-.stable-request-section {
+.stable-infra-section {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
     padding: 2rem;
     border-radius: 15px;
     border: 2px solid var(--primary);
 }
 
-.stable-request-links {
+.stable-infra-section h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+    display: inline-block;
+}
+
+.stable-infra-links {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
@@ -334,7 +343,7 @@ footer {
         padding: 1.5rem;
     }
 
-    .project-card, .stable-request-section {
+    .project-card, .stable-infra-section {
         padding: 1.5rem;
     }
 }
